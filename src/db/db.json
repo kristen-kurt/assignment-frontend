@@ -1,0 +1,145 @@
+{
+  "articles": {
+    "success": true,
+    "msg": "",
+    "result": [
+      {
+        "id": 333,
+        "source": "Beasley-Miller",
+        "title": "Become energy go off.",
+        "img": "https://dummyimage.com/589x558",
+        "source_url": "http://mcdonald.info/",
+        "author": "Samantha Stephens",
+        "date": "2002-11-06"
+      },
+      {
+        "id": 390,
+        "source": "Tran Inc",
+        "title": "Health design material statement once close.",
+        "img": "https://placeimg.com/791/296/any",
+        "source_url": "https://park-higgins.com/",
+        "author": "Ralph Montoya",
+        "date": "1999-08-20"
+      },
+      {
+        "id": 88,
+        "source": "Boyd-Conner",
+        "title": "Apply hit wide father might.",
+        "img": "https://placekitten.com/722/659",
+        "source_url": "https://turner.com/",
+        "author": "Tanya Boyer",
+        "date": "1989-11-16"
+      },
+      {
+        "id": 665,
+        "source": "White-Chan",
+        "title": "Quality stage per myself again spring artist.",
+        "img": "https://dummyimage.com/892x3",
+        "source_url": "https://www.blackburn.com/",
+        "author": "Alexandra Smith",
+        "date": "2004-08-04"
+      },
+      {
+        "id": 333,
+        "source": "Beasley-Miller",
+        "title": "Become energy go off.",
+        "img": "https://dummyimage.com/589x558",
+        "source_url": "http://mcdonald.info/",
+        "author": "Samantha Stephens",
+        "date": "2002-11-06"
+      },
+      {
+        "id": 390,
+        "source": "Tran Inc",
+        "title": "Health design material statement once close.",
+        "img": "https://placeimg.com/791/296/any",
+        "source_url": "https://park-higgins.com/",
+        "author": "Ralph Montoya",
+        "date": "1999-08-20"
+      },
+      {
+        "id": 88,
+        "source": "Boyd-Conner",
+        "title": "Apply hit wide father might.",
+        "img": "https://placekitten.com/722/659",
+        "source_url": "https://turner.com/",
+        "author": "Tanya Boyer",
+        "date": "1989-11-16"
+      },
+      {
+        "id": 665,
+        "source": "White-Chan",
+        "title": "Quality stage per myself again spring artist.",
+        "img": "https://dummyimage.com/892x3",
+        "source_url": "https://www.blackburn.com/",
+        "author": "Alexandra Smith",
+        "date": "2004-08-04"
+      },
+      {
+        "id": 665,
+        "source": "White-Chan",
+        "title": "Quality stage per myself again spring artist.",
+        "img": "https://dummyimage.com/892x3",
+        "source_url": "https://www.blackburn.com/",
+        "author": "Alexandra Smith",
+        "date": "2004-08-04"
+      },
+      {
+        "id": 333,
+        "source": "Beasley-Miller",
+        "title": "Become energy go off.",
+        "img": "https://dummyimage.com/589x558",
+        "source_url": "http://mcdonald.info/",
+        "author": "Samantha Stephens",
+        "date": "2002-11-06"
+      },
+      {
+        "id": 390,
+        "source": "Tran Inc",
+        "title": "Health design material statement once close.",
+        "img": "https://placeimg.com/791/296/any",
+        "source_url": "https://park-higgins.com/",
+        "author": "Ralph Montoya",
+        "date": "1999-08-20"
+      },
+      {
+        "id": 88,
+        "source": "Boyd-Conner",
+        "title": "Apply hit wide father might.",
+        "img": "https://placekitten.com/722/659",
+        "source_url": "https://turner.com/",
+        "author": "Tanya Boyer",
+        "date": "1989-11-16"
+      },
+      {
+        "id": 665,
+        "source": "White-Chan",
+        "title": "Quality stage per myself again spring artist.",
+        "img": "https://dummyimage.com/892x3",
+        "source_url": "https://www.blackburn.com/",
+        "author": "Alexandra Smith",
+        "date": "2004-08-04"
+      }
+    ]
+  },
+
+  "get-bookmarks": {
+    "success": true,
+    "msg": "",
+    "result": [
+      { "id": 1, "source": "", "title": "", "img": "", "source-url": "" },
+      { "id": 1, "source": "", "title": "", "img": "", "source-url": "" }
+    ]
+  },
+
+  "sources": {
+    "success": true,
+    "msg": "",
+    "result": ["guardian", "news"]
+  },
+  "categories": {
+    "success": true,
+    "msg": "",
+    "result": ["guardian", "news"]
+  }
+}
