@@ -1,4 +1,4 @@
-export type SourceT = {
+export type AuthorT = {
     id: number;
     name: string;
   };

@@ -8,8 +8,21 @@ import { FiUser } from "react-icons/fi";
 import { MdOutlineDateRange } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
+import LoadingSpinner from "../ui/loading";
 
-export default function Articles() {
+export default function Articles(
+  {
+    keyword,
+    sourceId,
+    categoryId,
+    selectedDate,
+  }: {
+    keyword: string;
+    sourceId: string;
+    categoryId: string;
+    selectedDate: string;
+  }
+  ) {
   const { ref: bottomRef, inView } = useInView({ threshold: 1.0 });
 
   const {
@@ -20,15 +33,23 @@ export default function Articles() {
     fetchNextPage,
     hasNextPage,
   } = useInfiniteQuery({
-    queryKey: ["articles"],
+    queryKey: ["articles", keyword, sourceId, categoryId, selectedDate],
     queryFn: async ({ pageParam = 1 }) => {
-      return await get<ArticleT[]>("articles");
+
+      const searchKey = keyword === "" ? "" : `&keyword=${keyword}`;
+      const sourceKey = sourceId === undefined ? "" : `&source_id=${sourceId}`;
+      const categoryKey = categoryId === undefined ? "" : `&category_id=${categoryId}`;
+      const dateKey = selectedDate === undefined ? "" : `&selected_date=${selectedDate}`;
+
+      return await get<ArticleT[]>(
+        `get-all-articles?page=${pageParam}${searchKey}${sourceKey}${categoryKey}${dateKey}`
+      );
     },
     getNextPageParam: (lastPage) => {
-      //   if (lastPage.result) {
-      //     const { current_page, last_page } = lastPage.result.meta;
-      //     return current_page < last_page ? current_page + 1 : undefined;
-      //   }
+        if (lastPage.data) {
+          const { current_page, last_page } = lastPage.meta;
+          return current_page < last_page ? current_page + 1 : undefined;
+        }
       return undefined;
     },
     initialPageParam: 1,
@@ -47,15 +68,20 @@ export default function Articles() {
         {data &&
           data.pages.map((page, index) => (
             <Fragment key={index}>
-              {page.result?.map((article) => (
+              {page.data?.map((article) => (
                 <a href={article.source_url} target="_blank">
                   <Card key={article.id} className="overflow-hidden bg-card">
-                    <img
-                      src={
-                        "https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg"
-                      }
-                      className="w-full aspect-[16/6] object-cover"
-                    />
+                    {article.img ? (
+                      <img
+                        src={article.img}
+                        className="w-full aspect-[16/6] object-cover"
+                        alt={article.img || 'Article Image'}
+                      />
+                    ) : (
+                      <div className="w-full aspect-[16/6] flex items-center justify-center bg-gray-200 text-gray-500">
+                        No Image Available
+                      </div>
+                    )}
                     <CardContent className="mt-4">
                       <CardTitle>{article.title}</CardTitle>
                       <div className="flex items-center justify-between mt-2">
@@ -82,9 +108,9 @@ export default function Articles() {
           ref={bottomRef}
           className="w-4 h-4 aspect-square bg-transparent pointer-events-none"
         />
-        {/* {isFetchingNextPage ? (
-      <LoadingSpinner className="text-primary mx-auto text-xl mt-4" />
-    ) : null} */}
+        {isFetchingNextPage ? (
+          <LoadingSpinner className="text-primary mx-auto text-xl mt-4" />
+        ) : null}
       </div>
     </section>
   );
