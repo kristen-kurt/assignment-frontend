@@ -1,7 +1,7 @@
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import SettingPage from "../pages/SettingPage";
-import LoginPage from "@/pages/LoginPage";
+import AuthPage from "@/pages/AuthPage";
  
 function PrivateRoute({ element }) {
   const token = localStorage.getItem("token");
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <ProtectRoute element={<LoginPage />} />
+      <ProtectRoute element={<AuthPage />} />
     ),
   },
   {

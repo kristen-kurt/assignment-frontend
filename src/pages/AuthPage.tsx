@@ -21,8 +21,10 @@ function App() {
                 console.log('Registration successful!', response.message, response.data);
                 localStorage.setItem('token', response.token);
                 setRegisterSuccessMsg(response.message);
+                navigate('/home');
             } catch (error) {
                 console.error('Registration failed!', error);
+                setError((error as any).response?.data?.message || 'An error occurred!');
             }
         }else {
             try {
@@ -34,6 +36,8 @@ function App() {
                 navigate('/home');
                 }catch (error) {
                     console.error('Login failed!', error);
+
+                    setError((error as any).response?.data?.message || 'An error occurred!');
                 }
             }
         } catch (error) {
@@ -149,7 +153,7 @@ function App() {
                 />
               </svg>
             </span>
-            {error && <p className="error">{error}</p>}
+            {error && <small className="text-red-500">{error}</small>}
           </div>
         </div>
 
